@@ -17,9 +17,9 @@ public class DetalleAlumnoEvento {
     String apellidos;
     String correo;
     Long id;
-    String nombre_evento;
-    Date fecha_incio;
-    Date fecha_fin;
+    String nombreEvento;
+    Date fechaIncio;
+    Date fechaFin;
 
 
 

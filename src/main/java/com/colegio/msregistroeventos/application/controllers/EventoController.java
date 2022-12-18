@@ -1,26 +1,22 @@
 package com.colegio.msregistroeventos.application.controllers;
 
-import com.colegio.msregistroeventos.domain.dto.DetalleAlumnoEvento;
 import com.colegio.msregistroeventos.domain.entities.Evento;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-//@RequestMapping(path = "/evento")
+@RequestMapping(path = "/eventos")
 public interface EventoController {
 
-    @GetMapping(value = "/eventos", produces = "application/json")
-    List<Evento> Listar();
+    @GetMapping(value = "/listar", produces = "application/json")
+    List<Evento> listarEventos();
 
-    //@GetMapping(path = "/detalle", produces = "application/json")
-    //List<DetalleAlumnoEvento> ListarDetalleEventos();
+    @PostMapping(value = "/registrar", consumes = {"application/json"})
+    Long registrarEvento(@RequestBody Evento evento);
 
-    @PostMapping(value = "/eventos", consumes = {"application/json"})
-    Long Registrar(@RequestBody Evento evento);
+    @PutMapping(value = "/actualizar", consumes ={"application/json"})
+    boolean actualizarEvento(@RequestBody Evento evento);
 
-    @PutMapping(value = "/eventos", consumes ={"application/json"})
-    boolean Actualizar(@RequestBody Evento evento);
-
-    @DeleteMapping(value = "/eventos/{id}")
-    boolean Eliminar(@PathVariable("id") Long id);
+    @DeleteMapping(value = "/eliminar/{id}")
+    boolean eliminarEvento(@PathVariable("id") Long id);
 }

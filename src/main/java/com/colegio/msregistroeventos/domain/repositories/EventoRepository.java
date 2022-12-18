@@ -1,19 +1,16 @@
 package com.colegio.msregistroeventos.domain.repositories;
 
-import com.colegio.msregistroeventos.domain.dto.DetalleAlumnoEvento;
 import com.colegio.msregistroeventos.domain.entities.Evento;
 
 import java.util.List;
 
 public interface EventoRepository {
 
-    List<Evento> Listar();
+    List<Evento> listarEventos();
 
-    //List<DetalleAlumnoEvento> ListarAlumnoEventos();
+    Long registrarEvento(Evento evento);
 
-    Long Registrar(Evento evento);
+    boolean actualizarEvento(Evento evento);
 
-    boolean Modificar(Evento evento);
-
-    boolean Eliminar(Long id);
+    boolean eliminarEvento(Long id);
 }

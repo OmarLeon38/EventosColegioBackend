@@ -6,21 +6,21 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-//@RequestMapping(path = "/alumno")
+@RequestMapping(path = "/alumnos")
 public interface AlumnoController {
 
-    @GetMapping(value = "/alumnos", produces = "application/json")
-    List<Alumno> Listar();
+    @GetMapping(value = "/listar", produces = "application/json")
+    List<Alumno> listarAlumnos();
 
-    @GetMapping(path = "/alumnos/eventos", produces = "application/json")
-    List<DetalleAlumnoEvento> ListarDetalleEventos();
-    @PostMapping(value = "/alumnos", consumes = {"application/json"})
-    String Registrar(@RequestBody Alumno alumno);
+    @GetMapping(path = "/detalleAlumnos", produces = "application/json")
+    List<DetalleAlumnoEvento> listarDetalleAlumnos();
+    @PostMapping(value = "/registrar", consumes = {"application/json"})
+    String registrarAlumno(@RequestBody Alumno alumno);
 
-    @PutMapping(value = "/alumnos", consumes = {"application/json"})
-    boolean Actualizar(@RequestBody Alumno alumno);
+    @PutMapping(value = "/actualizar", consumes = {"application/json"})
+    boolean actualizarAlumno(@RequestBody Alumno alumno);
 
-    @DeleteMapping(value = "/alumnos/{dni}")
-    boolean Eliminar(@PathVariable("dni") String dni);
+    @DeleteMapping(value = "/eliminar/{dni}")
+    boolean eliminarAlumno(@PathVariable("dni") String dni);
 }
 

@@ -1,18 +1,15 @@
 package com.colegio.msregistroeventos.domain.services;
 
-import com.colegio.msregistroeventos.domain.dto.DetalleAlumnoEvento;
 import com.colegio.msregistroeventos.domain.entities.Evento;
 
 import java.util.List;
 
 public interface EventoService {
-    List<Evento> Listar();
+    List<Evento> listarEventos();
 
-    //List<DetalleAlumnoEvento> ListarDetalleCursos();
+    Long registrarEvento(Evento evento);
 
-    Long Registrar(Evento evento);
+    boolean actualizarEvento(Evento evento);
 
-    boolean Actualizar(Evento evento);
-
-    boolean Eliminar(Long id);
+    boolean eliminarEvento(Long id);
 }

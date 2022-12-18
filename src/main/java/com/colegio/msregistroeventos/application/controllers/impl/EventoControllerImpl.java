@@ -1,7 +1,7 @@
 package com.colegio.msregistroeventos.application.controllers.impl;
 import com.colegio.msregistroeventos.application.controllers.EventoController;
 import com.colegio.msregistroeventos.domain.entities.Evento;
-import com.colegio.msregistroeventos.domain.services.impl.EventoSrviceImpl;
+import com.colegio.msregistroeventos.domain.services.Impl.EventoSeviceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -10,30 +10,25 @@ import java.util.List;
 @RestController
 public class EventoControllerImpl implements EventoController {
     @Autowired
-    EventoSrviceImpl eventoServiceImpl;
+    EventoSeviceImpl eventoServiceImpl;
 
     @Override
-    public List<Evento> Listar() {
-        return eventoServiceImpl.Listar();
-    }
-
-    //@Override
-    //public List<DetalleAlumnoEvento> ListarDetalleEventos() {
-    //    return eventoServiceImpl.ListarDetalleCursos();
-    //}
-
-    @Override
-    public Long Registrar(Evento evento) {
-        return eventoServiceImpl.Registrar(evento);
+    public List<Evento> listarEventos() {
+        return eventoServiceImpl.listarEventos();
     }
 
     @Override
-    public boolean Actualizar(Evento evento) {
-        return eventoServiceImpl.Actualizar(evento);
+    public Long registrarEvento(Evento evento) {
+        return eventoServiceImpl.registrarEvento(evento);
     }
 
     @Override
-    public boolean Eliminar(Long id) {
-        return eventoServiceImpl.Eliminar(id);
+    public boolean actualizarEvento(Evento evento) {
+        return eventoServiceImpl.actualizarEvento(evento);
+    }
+
+    @Override
+    public boolean eliminarEvento(Long id) {
+        return eventoServiceImpl.eliminarEvento(id);
     }
 }

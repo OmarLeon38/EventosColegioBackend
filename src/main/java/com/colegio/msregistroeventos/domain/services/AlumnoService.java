@@ -6,12 +6,12 @@ import com.colegio.msregistroeventos.domain.entities.Alumno;
 import java.util.List;
 
 public interface AlumnoService {
-    List<Alumno> Listar();
+    List<Alumno> listarAlumnos();
 
-    List<DetalleAlumnoEvento> ListarDetalleCursos();
-    String Registrar(Alumno alumno);
+    List<DetalleAlumnoEvento> listarDetalleAlumnos();
+    String registrarAlumno(Alumno alumno);
 
-    boolean Actualizar(Alumno alumno);
+    boolean actualizarAlumno(Alumno alumno);
 
-    boolean Eliminar(String dni);
+    boolean eliminarAlumno(String dni);
 }

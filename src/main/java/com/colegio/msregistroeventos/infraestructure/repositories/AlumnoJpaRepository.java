@@ -11,7 +11,5 @@ import java.util.List;
 @Repository
 public interface AlumnoJpaRepository extends JpaRepository<Alumno,String> {
         @Query(value = "select new com.colegio.msregistroeventos.domain.dto.DetalleAlumnoEvento(a.dni, a.nombre, a.apellidos, a.correo, e.id, e.nombreEvento, e.fechaInicio, e.fechaFin) from Alumno a join Evento e on a.evento.id = e.id")
-        List<DetalleAlumnoEvento> ListarAlumnoEventos();
+        List<DetalleAlumnoEvento> listarDetalleAlumnos();
 }
-
-//select a.dni, a.nombre, a.apellidos, a.correo, e.id, e.nombre_evento, e.fecha_inicio, e.fecha_fin  from alumnos a join eventos e on a.evento_id = e.id
