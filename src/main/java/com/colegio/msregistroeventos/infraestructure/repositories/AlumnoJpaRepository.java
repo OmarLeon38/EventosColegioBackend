@@ -1,5 +1,6 @@
 package com.colegio.msregistroeventos.infraestructure.repositories;
 
+import com.colegio.msregistroeventos.domain.dto.DetalleAlumno;
 import com.colegio.msregistroeventos.domain.dto.DetalleAlumnoEvento;
 import com.colegio.msregistroeventos.domain.entities.Alumno;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -12,4 +13,7 @@ import java.util.List;
 public interface AlumnoJpaRepository extends JpaRepository<Alumno,String> {
         @Query(value = "select new com.colegio.msregistroeventos.domain.dto.DetalleAlumnoEvento(a.dni, a.nombre, a.apellidos, a.correo, e.id, e.nombreEvento, e.fechaInicio, e.fechaFin) from Alumno a join Evento e on a.evento.id = e.id")
         List<DetalleAlumnoEvento> listarDetalleAlumnos();
+
+        @Query(value = "select new com.colegio.msregistroeventos.domain.dto.DetalleAlumno(a.dni, a.nombre, a.apellidos, a.edad, a.correo) from Alumno a")
+        List<DetalleAlumno> listarAlumnos();
 }

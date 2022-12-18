@@ -1,5 +1,6 @@
 package com.colegio.msregistroeventos.infraestructure.repositories.impljpa;
 
+import com.colegio.msregistroeventos.domain.dto.DetalleAlumno;
 import com.colegio.msregistroeventos.domain.dto.DetalleAlumnoEvento;
 import com.colegio.msregistroeventos.domain.entities.Alumno;
 import com.colegio.msregistroeventos.domain.repositories.AlumnoRepository;
@@ -15,8 +16,8 @@ public class AlumnoJpaRepositoryImpl implements AlumnoRepository {
     AlumnoJpaRepository alumnoJpaRepository;
 
     @Override
-    public List<Alumno> listarAlumnos() {
-        return alumnoJpaRepository.findAll();
+    public List<DetalleAlumno> listarAlumnos() {
+        return alumnoJpaRepository.listarAlumnos();
     }
 
     @Override

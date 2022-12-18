@@ -1,6 +1,7 @@
 package com.colegio.msregistroeventos.application.controllers.impl;
 
 import com.colegio.msregistroeventos.application.controllers.AlumnoController;
+import com.colegio.msregistroeventos.domain.dto.DetalleAlumno;
 import com.colegio.msregistroeventos.domain.dto.DetalleAlumnoEvento;
 import com.colegio.msregistroeventos.domain.entities.Alumno;
 import com.colegio.msregistroeventos.domain.services.Impl.AlumnoServiceImpl;
@@ -15,7 +16,7 @@ public class AlumnoControllerImpl implements AlumnoController {
     AlumnoServiceImpl alumnoServcieImpl;
 
     @Override
-    public List<Alumno> listarAlumnos() {
+    public List<DetalleAlumno> listarAlumnos() {
        return alumnoServcieImpl.listarAlumnos();
     }
 

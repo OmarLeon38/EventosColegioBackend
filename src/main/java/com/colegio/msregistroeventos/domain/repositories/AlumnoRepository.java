@@ -1,12 +1,13 @@
 package com.colegio.msregistroeventos.domain.repositories;
 
+import com.colegio.msregistroeventos.domain.dto.DetalleAlumno;
 import com.colegio.msregistroeventos.domain.dto.DetalleAlumnoEvento;
 import com.colegio.msregistroeventos.domain.entities.Alumno;
 
 import java.util.List;
 
 public interface AlumnoRepository {
-    List<Alumno> listarAlumnos();
+    List<DetalleAlumno> listarAlumnos();
 
     List<DetalleAlumnoEvento> listarDetalleAlumnos();
     String registrarAlumno(Alumno alumno);

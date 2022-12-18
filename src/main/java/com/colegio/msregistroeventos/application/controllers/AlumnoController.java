@@ -1,5 +1,6 @@
 package com.colegio.msregistroeventos.application.controllers;
 
+import com.colegio.msregistroeventos.domain.dto.DetalleAlumno;
 import com.colegio.msregistroeventos.domain.dto.DetalleAlumnoEvento;
 import com.colegio.msregistroeventos.domain.entities.Alumno;
 import org.springframework.web.bind.annotation.*;
@@ -10,7 +11,7 @@ import java.util.List;
 public interface AlumnoController {
 
     @GetMapping(value = "/listar", produces = "application/json")
-    List<Alumno> listarAlumnos();
+    List<DetalleAlumno> listarAlumnos();
 
     @GetMapping(path = "/detalleAlumnos", produces = "application/json")
     List<DetalleAlumnoEvento> listarDetalleAlumnos();
