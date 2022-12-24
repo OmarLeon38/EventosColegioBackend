@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class AlumnoControllerImpl implements AlumnoController {
@@ -23,6 +24,11 @@ public class AlumnoControllerImpl implements AlumnoController {
     @Override
     public List<DetalleAlumnoEvento> listarDetalleAlumnos() {
         return alumnoServcieImpl.listarDetalleAlumnos();
+    }
+
+    @Override
+    public Optional<Alumno> listarAlumnoxId(String dni) {
+        return alumnoServcieImpl.listarAlumnoxId(dni);
     }
 
     @Override

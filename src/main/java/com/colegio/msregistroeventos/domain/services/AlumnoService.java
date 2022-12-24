@@ -5,11 +5,13 @@ import com.colegio.msregistroeventos.domain.dto.DetalleAlumnoEvento;
 import com.colegio.msregistroeventos.domain.entities.Alumno;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface AlumnoService {
     List<DetalleAlumno> listarAlumnos();
 
     List<DetalleAlumnoEvento> listarDetalleAlumnos();
+    Optional<Alumno> listarAlumnoxId(String dni);
     String registrarAlumno(Alumno alumno);
 
     boolean actualizarAlumno(Alumno alumno);

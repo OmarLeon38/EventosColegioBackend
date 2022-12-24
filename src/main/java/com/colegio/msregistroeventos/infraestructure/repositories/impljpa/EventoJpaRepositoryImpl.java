@@ -6,6 +6,7 @@ import com.colegio.msregistroeventos.infraestructure.repositories.EventoJpaRepos
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import java.util.List;
+import java.util.Optional;
 
 @Component
 public class EventoJpaRepositoryImpl implements EventoRepository {
@@ -15,6 +16,11 @@ public class EventoJpaRepositoryImpl implements EventoRepository {
     @Override
     public List<Evento> listarEventos() {
         return eventoJpaRepository.findAll();
+    }
+
+    @Override
+    public Optional<Evento> listarEventoxId(Long id) {
+        return eventoJpaRepository.findById(id);
     }
 
     @Override

@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class AlumnoServiceImpl implements AlumnoService {
@@ -23,6 +24,11 @@ public class AlumnoServiceImpl implements AlumnoService {
     @Override
     public List<DetalleAlumnoEvento> listarDetalleAlumnos() {
         return alumnoJpaRepository.listarDetalleAlumnos();
+    }
+
+    @Override
+    public Optional<Alumno> listarAlumnoxId(String dni) {
+        return alumnoJpaRepository.listarAlumnoxId(dni);
     }
 
     @Override

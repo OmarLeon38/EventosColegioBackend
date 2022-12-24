@@ -6,6 +6,7 @@ import com.colegio.msregistroeventos.domain.entities.Alumno;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RequestMapping(path = "/alumnos")
 public interface AlumnoController {
@@ -15,6 +16,9 @@ public interface AlumnoController {
 
     @GetMapping(path = "/detalleAlumnos", produces = "application/json")
     List<DetalleAlumnoEvento> listarDetalleAlumnos();
+
+    @GetMapping(value = "/listarxId/{dni}", produces = "application/json")
+    Optional<Alumno> listarAlumnoxId(@PathVariable("dni") String dni);
     @PostMapping(value = "/registrar", consumes = {"application/json"})
     String registrarAlumno(@RequestBody Alumno alumno);
 

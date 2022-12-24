@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class EventoControllerImpl implements EventoController {
@@ -15,6 +16,11 @@ public class EventoControllerImpl implements EventoController {
     @Override
     public List<Evento> listarEventos() {
         return eventoServiceImpl.listarEventos();
+    }
+
+    @Override
+    public Optional<Evento> listarEventoxId(Long id) {
+        return eventoServiceImpl.listarEventoxId(id);
     }
 
     @Override
